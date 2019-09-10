@@ -6,5 +6,5 @@
     tasks:
     - name: Delete index.html file
       file:
-        path: /var/www/html/index.html
+        path: /var/www/html/helloworld.html
         state: absent
