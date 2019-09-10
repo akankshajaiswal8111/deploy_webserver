@@ -15,7 +15,7 @@
      dest: "{{ item.dest }}"
     with_items:
      - { src: 'httpd.conf2',dest: '/etc/httpd/conf/httpd.conf' }
-     - { src: 'index.html',dest: '/var/www/html' }
+     - { src: 'helloworld.html',dest: '/var/www/html' }
   - name: start httpd
     service:
        name: httpd
