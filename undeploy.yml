@@ -4,7 +4,7 @@
     become_user: root
 
     tasks:
-    - name: Delete index.html file
+    - name: Delete html file
       file:
-        path: /var/www/html/helloworld.html
+        path: /var/www/html/index.html
         state: absent
