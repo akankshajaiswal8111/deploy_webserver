@@ -9,17 +9,14 @@
   - name: install httpd
     yum: name=httpd state=latest
     register: httpd_check
-  - name: Copy httpd.conf and index.html file
+  - name: Copy httpd.conf and html file
     copy:
      src: "{{ item.src }}"
      dest: "{{ item.dest }}"
     with_items:
-     - { src: 'httpd.conf2',dest: '/etc/httpd/conf/httpd.conf' }
-     - { src: 'helloworld.html',dest: '/var/www/html' }
+     - { src: 'httpd.conf',dest: '/etc/httpd/conf' }
+     - { src: 'index.html',dest: '/var/www/html' }
   - name: start httpd
     service:
        name: httpd
        state: started
-    become: yes
-    become_method: sudo
-    become_user: root
